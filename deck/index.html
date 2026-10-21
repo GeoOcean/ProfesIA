@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProfesIA · IA y VS Code</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="brand"><img src="assets/logos/uc.png" alt="" class="brand-logo" /><span
+      class="brand-name">ProfesIA</span><span class="brand-sub">&nbsp;&middot; ETSI Caminos &middot; GeoOcean</span>
+  </div>
+  <div class="brand-right">
+    <button id="theme-btn" class="theme-btn" type="button">&#9789; Oscuro</button>
+  </div>
+
+  <div id="deck">
+
+    <!-- ============================================================ 1 -->
+    <section class="slide title-slide">
+      <div class="title-logos">
+        <img src="assets/logos/uc.png" alt="Universidad de Cantabria" />
+        <span class="divider"></span>
+        <img src="assets/logos/etsiccp.png" alt="Escuela de Caminos, Universidad de Cantabria" />
+        <span class="divider"></span>
+        <img src="assets/logos/geoocean.png" alt="GeoOcean" />
+      </div>
+      <p class="kicker">Formación para el profesorado &middot; ProfesIA</p>
+      <h1>La IA en tu ordenador: de ChatGPT a VS Code</h1>
+      <div class="divider-bar"></div>
+      <h2>Quién está detrás de la inteligencia artificial, cómo usarla dentro de VS Code y cómo ejecutar y depurar
+        Python, paso a paso y sin dar nada por supuesto.</h2>
+      <div class="title-meta">
+        <div><strong>Javier Tausía Hoyal</strong>GeoOcean &middot; tausiaj@unican.es</div>
+        <div><strong>Taller práctico</strong>Trae tu portátil: lo instalamos juntos</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2 -->
+    <section class="slide">
+      <p class="kicker">Antes de empezar &middot; ¿Quién es quién?</p>
+      <h1>Cuatro empresas, cuatro caras</h1>
+      <h2>Casi todo lo que oímos sobre IA sale de estas cuatro empresas. Conocer a quién las dirige ayuda a entender
+        las noticias.</h2>
+      <div class="body">
+        <div class="people">
+          <div class="person">
+            <img class="face" src="assets/people/altman.jpg" alt="Sam Altman" data-zoom />
+            <div class="who">
+              <span class="company"><span class="logo logo-openai"></span>OpenAI</span>
+              <h3>Sam Altman</h3>
+              <span class="role">CEO de OpenAI</span>
+              <p>Lanzó <strong>ChatGPT</strong> en noviembre de 2022 y con él arrancó la carrera de la IA.</p>
+            </div>
+          </div>
+          <div class="person">
+            <img class="face" src="assets/people/amodei.jpg" alt="Dario Amodei" data-zoom />
+            <div class="who">
+              <span class="company"><span class="logo logo-anthropic"></span>Anthropic</span>
+              <h3>Dario Amodei</h3>
+              <span class="role">CEO y cofundador de Anthropic</span>
+              <p>Dejó OpenAI en 2021 para fundar Anthropic, centrada en una IA segura. Crean <strong>Claude</strong>.</p>
+            </div>
+          </div>
+          <div class="person">
+            <img class="face" src="assets/people/hassabis.jpg" alt="Demis Hassabis" data-zoom />
+            <div class="who">
+              <span class="company"><span class="logo logo-google"></span>Google DeepMind</span>
+              <h3>Demis Hassabis</h3>
+              <span class="role">CEO de Google DeepMind</span>
+              <p>Premio Nobel de Química 2024 por AlphaFold. Su equipo crea <strong>Gemini</strong>.</p>
+            </div>
+          </div>
+          <div class="person">
+            <img class="face" src="assets/people/nadella.jpg" alt="Satya Nadella" data-zoom />
+            <div class="who">
+              <span class="company"><span class="ms-logo"><i></i><i></i><i></i><i></i></span>Microsoft</span>
+              <h3>Satya Nadella</h3>
+              <span class="role">CEO de Microsoft</span>
+              <p>Gran inversor de OpenAI desde 2019. Lleva la IA a Office, Windows y GitHub: <strong>Copilot</strong>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="ev"><b>2017</b>Google publica el «Transformer», la T de GPT</div>
+          <div class="ev"><b>2019</b>Microsoft invierte en OpenAI</div>
+          <div class="ev"><b>2021</b>Nace Anthropic, fundada por exmiembros de OpenAI</div>
+          <div class="ev hot"><b>Nov 2022</b>ChatGPT: 100 millones de usuarios en dos meses</div>
+          <div class="ev"><b>2023</b>Llegan Claude, Gemini (antes Bard) y Microsoft Copilot</div>
+          <div class="ev"><b>2026</b>GPT-6, Claude 5, Gemini 3: la IA ya escribe y ejecuta código</div>
+        </div>
+      </div>
+      <p class="credits">Fotos (Wikimedia Commons): Altman, <a
+          href="https://commons.wikimedia.org/w/index.php?curid=193265087" target="_blank" rel="noopener">Oficina del
+          Primer Ministro de Japón</a>, CC BY 4.0 &middot; Amodei, <a
+          href="https://commons.wikimedia.org/w/index.php?curid=185801188" target="_blank" rel="noopener">TechCrunch</a>,
+        CC BY 2.0 &middot; Hassabis, <a href="https://commons.wikimedia.org/w/index.php?curid=172057215"
+          target="_blank" rel="noopener">John Sears</a>, CC BY-SA 4.0 &middot; Nadella, <a
+          href="https://commons.wikimedia.org/w/index.php?curid=95777523" target="_blank" rel="noopener">Brian Smale y
+          Microsoft</a>, CC BY-SA 4.0</p>
+    </section>
+
+    <!-- ============================================================ 3 -->
+    <section class="slide">
+      <p class="kicker">El mapa</p>
+      <h1>Empresa, modelo, chat… y su versión para VS Code</h1>
+      <h2>El <strong>modelo</strong> es el cerebro. El chat de la web y la extensión de VS Code son dos puertas distintas
+        al mismo cerebro.</h2>
+      <div class="body">
+        <table class="map">
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Modelo</th>
+              <th>Chat (web y app)</th>
+              <th class="vsc-col">En VS Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="co"><span class="logo logo-openai"></span>OpenAI</span></td>
+              <td>GPT-6</td>
+              <td>ChatGPT<small>chatgpt.com</small></td>
+              <td class="vsc-col"><span class="inline"><span class="logo logo-openai"></span>Codex</span><small>Extensión
+                  oficial de OpenAI</small></td>
+            </tr>
+            <tr>
+              <td><span class="co"><span class="logo logo-anthropic"></span>Anthropic</span></td>
+              <td>Claude<small>Opus y Sonnet 5.5</small></td>
+              <td>Claude<small>claude.ai</small></td>
+              <td class="vsc-col"><span class="inline"><span class="logo logo-claude"></span>Claude Code</span><small>Extensión
+                  oficial de Anthropic</small></td>
+            </tr>
+            <tr>
+              <td><span class="co"><span class="logo logo-google"></span>Google</span></td>
+              <td>Gemini 3.5</td>
+              <td>Gemini<small>gemini.google.com</small></td>
+              <td class="vsc-col"><span class="inline"><span class="logo logo-gemini"></span>Gemini Code
+                  Assist</span><small>Extensión oficial de Google</small></td>
+            </tr>
+            <tr>
+              <td><span class="co"><span class="ms-logo"><i></i><i></i><i></i><i></i></span>Microsoft &middot;
+                  GitHub</span></td>
+              <td>Usa los de los demás<small>GPT, Claude y Gemini</small></td>
+              <td>Microsoft Copilot<small>copilot.microsoft.com</small></td>
+              <td class="vsc-col"><span class="inline"><span class="logo logo-copilot"></span>GitHub
+                  Copilot</span><small>Ya viene integrado en VS Code</small></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="analogy">
+          <div class="card green">
+            <span class="pill">Empresa</span>
+            <p style="margin-top:0.4rem">Quien entrena el modelo y cobra por usarlo.</p>
+          </div>
+          <div class="card green">
+            <span class="pill">Modelo</span>
+            <p style="margin-top:0.4rem">El «cerebro». Cambia de versión cada pocos meses; el nombre de la puerta no.</p>
+          </div>
+          <div class="card red">
+            <span class="pill red">Para docentes</span>
+            <p style="margin-top:0.4rem"><strong>GitHub Copilot Student, gratis</strong> con GitHub Education:
+              autocompletado ilimitado y 200 créditos al mes para el chat.</p>
+          </div>
+        </div>
+        <p class="muted">Versiones a octubre de 2026.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================ 4 -->
+    <section class="slide">
+      <p class="kicker">La herramienta &middot; VS Code</p>
+      <h1>¿Qué es VS Code?</h1>
+      <h2>Un editor gratuito de Microsoft para Windows, macOS y Linux. No es «solo para programadores»: es una mesa de
+        trabajo para cualquier archivo de texto, y en él vive también la IA.</h2>
+      <div class="body cols-2 wide-right">
+        <ol class="legend">
+          <li><strong>Barra de actividad</strong>: explorador, buscar, Git, depurar y extensiones.</li>
+          <li><strong>Explorador</strong>: VS Code abre <em>carpetas</em>, no solo archivos. Tu proyecto entero a la
+            vista.</li>
+          <li><strong>Editor</strong>: colores, autocompletado y avisos de errores mientras escribes.</li>
+          <li><strong>Terminal</strong>: la «línea de comandos», dentro del propio editor.</li>
+          <li><strong>Chat de IA</strong>: le pides cosas en español y ve tus archivos.</li>
+          <li><strong>Barra de estado</strong>: qué Python estás usando, en qué línea estás…</li>
+        </ol>
+        <div class="vsc" aria-label="Esquema de la ventana de VS Code">
+          <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i
+              style="background:#28c840"></i><span>viga.py — ejemplos</span></div>
+          <div class="main">
+            <div class="act"><span class="badge">1</span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+            <div class="side"><span class="badge">2</span><span class="h">EXPLORADOR</span><br>▾ ejemplos<br>
+              <div class="sel">&nbsp;&nbsp;viga.py</div>&nbsp;&nbsp;viga.ipynb<br>&nbsp;&nbsp;viga_con_error.py
+            </div>
+            <div class="center">
+              <div class="editor"><span class="badge">3</span><span class="k">import</span> numpy <span class="k">as</span> np
+
+L = <span class="n">3.0</span>  <span class="c"># longitud [m]</span>
+P = <span class="n">10e3</span> <span class="c"># carga [N]</span>
+E = <span class="n">210e9</span> <span class="c"># acero [Pa]</span>
+
+x = np.<span class="f">linspace</span>(<span class="n">0</span>, L, <span class="n">100</span>)
+<span class="f">print</span>(<span class="s">"Flecha máxima…"</span>)</div>
+              <div class="term"><span class="badge">4</span>TERMINAL<br><b>$ python viga.py</b><br>Flecha máxima: 22.1 mm</div>
+            </div>
+            <div class="chat"><span class="badge">5</span>
+              <div class="msg me">¿Qué hace este archivo?</div>
+              <div class="msg">Calcula la flecha de una viga en voladizo de 3 m con una carga de 10 kN en el extremo…
+              </div>
+            </div>
+          </div>
+          <div class="status"><span class="badge" style="right:auto;left:40%;top:-10px">6</span><span>Python 3.12
+              ('curso')</span><span>Ln 5, Col 12 &nbsp; UTF-8</span></div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:1rem">Descarga: <strong>code.visualstudio.com</strong> &middot; Ponerlo en
+        español: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → «Configure Display Language».</p>
+    </section>
+
+    <!-- ============================================================ 5 -->
+    <section class="slide">
+      <p class="kicker">La herramienta &middot; Extensiones</p>
+      <h1>Las extensiones le dan superpoderes</h1>
+      <h2>VS Code recién instalado solo edita texto. Cada extensión añade una habilidad. Las de IA son el puente entre
+        tu editor y un modelo que vive en la nube.</h2>
+      <div class="body">
+        <div class="flow">
+          <div class="flow-step">
+            <span class="where">Tu ordenador</span>
+            <h3>VS Code</h3>
+            <p>El editor, con tus archivos abiertos.</p>
+          </div>
+          <div class="flow-step">
+            <span class="where">Tu ordenador</span>
+            <h3>+ Extensión de IA</h3>
+            <p>Copilot, Claude Code, Codex o Gemini. Se instala gratis en un clic.</p>
+          </div>
+          <div class="flow-step">
+            <span class="where">Inicio de sesión</span>
+            <h3>Tu cuenta</h3>
+            <p>Entras con tu cuenta de GitHub, OpenAI, Anthropic o Google. Aquí está el plan (gratis o de pago).</p>
+          </div>
+          <div class="flow-step cloud">
+            <span class="where">La nube</span>
+            <h3>El modelo</h3>
+            <p>Recibe tu pregunta y los archivos que le dejes ver, y devuelve la respuesta o los cambios.</p>
+          </div>
+        </div>
+        <div>
+          <p style="margin-bottom:0.7rem">Instalar una: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd> (en Mac
+            <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) → buscar el nombre → <strong>Install</strong>. Hoy
+            instalamos estas:</p>
+          <div class="ext-list">
+            <div class="ext"><span class="logo logo-python"></span>
+              <div>
+                <h4>Python</h4>
+                <p>De Microsoft. Ejecutar y depurar archivos <code>.py</code>.</p>
+              </div>
+            </div>
+            <div class="ext"><span class="logo logo-jupyter"></span>
+              <div>
+                <h4>Jupyter</h4>
+                <p>De Microsoft. Abrir y ejecutar notebooks <code>.ipynb</code>.</p>
+              </div>
+            </div>
+            <div class="ext"><img class="img-logo" src="assets/logos/vscode.png" alt="" />
+              <div>
+                <h4>Spanish Language Pack</h4>
+                <p>De Microsoft. Menús en español (opcional).</p>
+              </div>
+            </div>
+            <div class="ext ai">
+              <div class="logos"><span class="logo logo-copilot"></span><span class="logo logo-claude"></span><span
+                  class="logo logo-openai"></span><span class="logo logo-gemini"></span></div>
+              <div>
+                <h4>Una de IA, a elegir</h4>
+                <p>Según la cuenta que tengas. Copilot ya viene de serie.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 6 -->
+    <section class="slide">
+      <p class="kicker">Entender los archivos</p>
+      <h1>Archivos de texto y archivos binarios</h1>
+      <h2>Todo archivo son ceros y unos. La diferencia es si esos bytes son <strong>letras que una persona puede
+          leer</strong> o un formato que solo entiende su programa.</h2>
+      <div class="body cols-2">
+        <div class="card green">
+          <h3>Texto</h3>
+          <div class="ext-chips"><span>.py</span><span>.ipynb</span><span>.m</span><span>.csv</span><span>.txt</span><span>.md</span><span>.tex</span><span>.json</span></div>
+          <p>Se abren con cualquier editor. VS Code y la IA los leen y modifican directamente, y se ve qué ha cambiado
+            línea a línea.</p>
+          <div class="peek">
+            <div class="ph">flecha.csv, abierto en VS Code</div>
+            <pre>x_m,flecha_mm
+0.0,0.0
+0.5,0.9
+1.0,3.3
+1.5,6.9</pre>
+          </div>
+        </div>
+        <div class="card red">
+          <h3>Binario</h3>
+          <div class="ext-chips"><span>.docx</span><span>.xlsx</span><span>.pdf</span><span>.png</span><span>.mat</span><span>.exe</span></div>
+          <p>Necesitan su programa (Word, Excel, un visor…). Abiertos como texto son símbolos sin sentido, y la IA
+            tiene que convertirlos antes de entenderlos.</p>
+          <div class="peek garbage">
+            <div class="ph">flecha.xlsx, abierto como texto</div>
+            <pre>PK♥♦ ¶ ♠ ◘   ! bîh^☺  [Content_Types].xml ¢♦☻(  ¬”ËNÃ0►E÷H|‡äàø0‰¶◄Ë%#ÅÓvÔï§…♣Ú·ƒ…ÅÞÐ…♠•ø‰•R</pre>
+          </div>
+        </div>
+      </div>
+      <div class="callout card-clickable" data-code="ipynb-json" data-title="viga.ipynb, abierto como texto"
+        style="margin-top:1.2rem">
+        <span class="big">💡</span>
+        <span><strong>Sorpresa: un notebook <code>.ipynb</code> es texto.</strong> Por dentro es JSON: celdas de
+          código y de texto una detrás de otra. Por eso la IA puede leerlo y editarlo. <span class="hint">Pulsa para
+            verlo ↗</span></span>
+      </div>
+      <template id="ipynb-json">
+        <pre>{
+ "cells": [
+  {
+   "cell_type": <span class="hl">"markdown"</span>,
+   "source": [
+    "# Viga en voladizo\n",
+    "Mi primer *notebook*: texto, código y gráficos en el mismo archivo.\n"
+   ]
+  },
+  {
+   "cell_type": <span class="hl">"code"</span>,
+   "outputs": [],
+   "source": [
+    "x = np.linspace(0, L, 100)\n",
+    "flecha = P * x**2 * (3 * L - x) / (6 * E * I)\n",
+    "print(f\"Flecha máxima: {flecha.max() * 1000:.1f} mm\")"
+   ]
+  }
+ ],
+ "metadata": { "kernelspec": { "name": "python3" } },
+ "nbformat": 4
+}</pre>
+      </template>
+    </section>
+
+    <!-- ============================================================ 7 -->
+    <section class="slide">
+      <p class="kicker">Manos a la obra &middot; 1 de 4</p>
+      <h1>Instalar Python con Miniforge</h1>
+      <h2><strong>Miniforge</strong> trae Python y <strong>conda</strong>, que instala librerías y las organiza en
+        «entornos». Es gratuito y sin las restricciones de licencia de Anaconda.</h2>
+      <div class="body cols-2">
+        <div class="card green">
+          <h3 class="os-head">Windows</h3>
+          <ol class="steps">
+            <li>Entra en <strong>github.com/conda-forge/miniforge</strong> y descarga
+              <code>Miniforge3-Windows-x86_64.exe</code>.</li>
+            <li>Instálalo con las opciones por defecto («Just Me»).</li>
+            <li>En el menú Inicio abre <strong>Miniforge Prompt</strong>.</li>
+            <li>Para usar conda también en la terminal de VS Code:</li>
+          </ol>
+          <div class="cmd">
+            <pre>conda init powershell</pre>
+          </div>
+        </div>
+        <div class="card green">
+          <h3 class="os-head">macOS (y Linux)</h3>
+          <ol class="steps">
+            <li>Abre la app <strong>Terminal</strong> y pega:</li>
+          </ol>
+          <div class="cmd">
+            <pre>curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh</pre>
+          </div>
+          <ol class="steps" start="2">
+            <li>Acepta la licencia y responde <strong>yes</strong> a todo.</li>
+            <li>Cierra la terminal y abre una nueva.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:1.2rem">
+        <span class="big">✅</span>
+        <span>Comprobación en los dos sistemas: escribe <code>conda --version</code>. Si responde algo como
+          <code>conda 25.x</code>, está listo.</span>
+      </div>
+    </section>
+
+    <!-- ============================================================ 8 -->
+    <section class="slide">
+      <p class="kicker">Manos a la obra &middot; 2 de 4</p>
+      <h1>Un entorno para el curso, y decírselo a VS Code</h1>
+      <h2>Un <strong>entorno</strong> es una caja de herramientas por proyecto: su versión de Python y sus librerías,
+        sin mezclarse con las de otros proyectos.</h2>
+      <div class="body cols-2">
+        <div>
+          <h3 class="os-head"><span class="logo logo-conda"></span>En la terminal</h3>
+          <div class="cmd">
+            <pre><span class="c"># crea el entorno «curso» con Python y las librerías del taller</span>
+conda create -n curso python=3.12 numpy pandas matplotlib ipykernel -y</pre>
+          </div>
+          <div class="cmd">
+            <pre><span class="c"># entrar en el entorno (cada vez que abras una terminal nueva)</span>
+conda activate curso</pre>
+          </div>
+          <p class="muted" style="margin-top:0.6rem">¿Falta una librería más adelante?
+            <code>conda install -n curso scipy</code></p>
+        </div>
+        <div>
+          <h3 class="os-head"><img class="img-logo" src="assets/logos/vscode.png" alt="" />En VS Code</h3>
+          <ol class="steps">
+            <li>Descarga los ejemplos: <strong>github.com/GeoOcean/ProfesIA</strong> → <strong>Code</strong> →
+              <strong>Download ZIP</strong>, y descomprímelo.</li>
+            <li><strong>Archivo → Abrir carpeta…</strong> → la carpeta <code>ejemplos</code>.</li>
+            <li>Abre <code>viga.py</code>. Pulsa <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → <strong>Python:
+                Select Interpreter</strong> → elige <code>curso</code>.</li>
+            <li>En un notebook, arriba a la derecha: <strong>Select Kernel</strong> → <code>curso</code>.</li>
+          </ol>
+          <div class="callout" style="margin-top:1rem">
+            <span class="big">👀</span>
+            <span>Si abajo a la derecha pone <code>3.12 ('curso')</code>, VS Code está usando tu entorno.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 9 -->
+    <section class="slide">
+      <p class="kicker">Manos a la obra &middot; 3 de 4</p>
+      <h1>Ejecutar un script y un notebook</h1>
+      <h2>El mismo cálculo, la flecha de una viga en voladizo, de dos formas. Las dos usan el mismo Python del entorno
+        <code>curso</code>.</h2>
+      <div class="body cols-2">
+        <div class="code-card">
+          <div class="ch"><span>viga.py</span><span class="run">▶ Run Python File</span></div>
+          <pre><span class="k">import</span> numpy <span class="k">as</span> np
+
+L = 3.0       <span class="c"># longitud [m]</span>
+P = 10e3      <span class="c"># carga en el extremo [N]</span>
+E = 210e9     <span class="c"># acero [Pa]</span>
+I = 1943e-8   <span class="c"># IPE 200 [m⁴]</span>
+
+x = np.linspace(0, L, 100)
+flecha = P * x**2 * (3*L - x) / (6*E*I)
+print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre>
+          <div class="use"><strong>Script (<code>.py</code>)</strong>: se ejecuta entero de arriba abajo con ▶, o
+            en la terminal con <code>python viga.py</code>. Ideal para cálculos que repites.</div>
+        </div>
+        <div class="code-card">
+          <div class="ch"><span>viga.ipynb</span><span class="run">⇧ Shift + Enter</span></div>
+          <div class="cell md"><b>Viga en voladizo</b><br>Texto, fórmulas y explicación entre el código.</div>
+          <div class="cell code">
+            <pre>flecha = P * x**2 * (3*L - x) / (6*E*I)
+print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre>
+            <div class="out">Flecha máxima: 22.1 mm</div>
+          </div>
+          <div class="cell code">
+            <pre>plt.plot(x, -flecha * 1000)</pre>
+            <div class="out"><svg viewBox="0 0 300 70" preserveAspectRatio="none" aria-label="Gráfico de la flecha">
+                <line x1="10" y1="8" x2="290" y2="8" stroke="var(--border)" />
+                <path d="M10 8 Q 150 10 290 62" fill="none" stroke="var(--green)" stroke-width="2.5" />
+              </svg></div>
+          </div>
+          <div class="use"><strong>Notebook (<code>.ipynb</code>)</strong>: celdas que se ejecutan de una en una, con
+            el resultado debajo. Ideal para explorar datos y para dar clase.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 10 -->
+    <section class="slide">
+      <p class="kicker">Manos a la obra &middot; 4 de 4</p>
+      <h1>Depurar: parar el programa y mirar dentro</h1>
+      <h2>Cuando algo sale mal, no hace falta llenar el código de <code>print</code>. El depurador congela el programa
+        en una línea y te enseña el valor de cada variable.</h2>
+      <div class="body cols-2">
+        <div class="code-card dbg">
+          <div class="ch"><span>viga_con_error.py</span><span class="run">▷ F5 · Depurar</span></div>
+          <pre><span class="line">L = 3.0       <span class="c"># longitud [m]</span></span><span class="line">P = 10e3      <span class="c"># carga [N]</span></span><span class="line">E = 210e6     <span class="c"># acero [Pa]</span></span><span class="line">I = 1943e-8   <span class="c"># IPE 200 [m⁴]</span></span><span class="line">x = np.linspace(0, L, 100)</span><span class="line bp here">flecha = flecha_voladizo(x, L, P, E, I)</span><span class="line">print(<span class="s">f"Flecha máxima: …"</span>)</span></pre>
+          <div class="vars">
+            <span class="vh">Variables</span>
+            <span>L</span><span>3.0</span>
+            <span>P</span><span>10000.0</span>
+            <span class="bad">E</span><span class="bad">210000000.0 ← ¡faltan tres ceros! (210 GPa = 210e9)</span>
+            <span>I</span><span>1.943e-05</span>
+          </div>
+        </div>
+        <div>
+          <ol class="steps">
+            <li>Abre <code>viga_con_error.py</code> y ejecútalo: dice que la flecha es de <strong>22 m</strong>. Algo
+              falla.</li>
+            <li>Pulsa en el margen, a la izquierda del número de línea: aparece un <strong>punto rojo</strong> (punto
+              de interrupción).</li>
+            <li>Pulsa <kbd>F5</kbd> → <strong>Python Debugger: Current File</strong>. El programa se para en el
+              punto rojo.</li>
+            <li>Mira el panel <strong>Variables</strong>: E vale 210 millones, no 210 000 millones.</li>
+          </ol>
+          <div class="keys" style="margin-top:1.2rem">
+            <kbd>F10</kbd><span><strong>Siguiente línea</strong></span>
+            <kbd>F11</kbd><span><strong>Entrar</strong> en la función</span>
+            <kbd>F5</kbd><span><strong>Continuar</strong> hasta el siguiente punto rojo</span>
+          </div>
+          <p class="muted" style="margin-top:0.9rem">En notebooks: flecha junto a ▶ de la celda → <strong>Debug
+              Cell</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 11 -->
+    <section class="slide">
+      <p class="kicker">Todo junto</p>
+      <h1>Pedirle cosas a la IA dentro de VS Code</h1>
+      <h2>Abre el chat de tu extensión, con la carpeta <code>ejemplos</code> abierta. Escribe en español, como a un
+        compañero. La IA ve tus archivos y propone cambios que <strong>tú aceptas o rechazas</strong>.</h2>
+      <div class="body cols-3">
+        <div class="prompt">
+          <span class="tag">1 &middot; Entender</span>
+          «Explícame qué hace <code>viga.py</code> línea a línea, como si no supiera Python.»
+          <span class="then">Ideal para heredar código de un compañero o de un TFG.</span>
+        </div>
+        <div class="prompt">
+          <span class="tag">2 &middot; Ampliar</span>
+          «Añade a <code>viga.ipynb</code> una celda que dibuje también el momento flector y guarde la figura en
+          PNG.»
+          <span class="then">Verás los cambios marcados en verde y rojo antes de aceptarlos.</span>
+        </div>
+        <div class="prompt">
+          <span class="tag">3 &middot; Arreglar</span>
+          «<code>viga_con_error.py</code> da una flecha 1000 veces mayor de lo esperado. ¿Dónde está el error?»
+          <span class="then">Compara su respuesta con lo que encontraste con el depurador.</span>
+        </div>
+      </div>
+      <div class="cols-3" style="margin-top:1.4rem">
+        <div class="callout"><span class="big">🎯</span><span><strong>Da contexto.</strong> Di qué archivo, qué
+            esperas y qué obtienes.</span></div>
+        <div class="callout"><span class="big">🪜</span><span><strong>Pide por pasos.</strong> Mejor tres peticiones
+            pequeñas que una enorme.</span></div>
+        <div class="callout red"><span class="big">🔍</span><span><strong>Revisa siempre.</strong> La IA se equivoca
+            con seguridad; tú eres el ingeniero.</span></div>
+      </div>
+      <p class="muted" style="margin-top:1rem">Con Copilot Student: cada mensaje del chat gasta créditos (200 al mes,
+        se reponen el día 1); el autocompletado no gasta. Deja el modelo en <strong>Auto</strong> y pide cosas
+        concretas.</p>
+    </section>
+
+    <!-- ============================================================ 12 -->
+    <section class="slide">
+      <p class="kicker">Para casa</p>
+      <h1>Lista de comprobación</h1>
+      <h2>Si puedes marcar todo, ya tienes lo necesario para trabajar con IA y Python en VS Code.</h2>
+      <div class="body cols-2">
+        <ul class="checklist">
+          <li><label><input type="checkbox" /><span>VS Code instalado (y en español, si lo prefieres)</span></label></li>
+          <li><label><input type="checkbox" /><span>Extensiones <strong>Python</strong> y <strong>Jupyter</strong>
+                instaladas</span></label></li>
+          <li><label><input type="checkbox" /><span>Miniforge instalado: <code>conda --version</code> responde</span></label></li>
+          <li><label><input type="checkbox" /><span>Entorno <code>curso</code> creado</span></label></li>
+          <li><label><input type="checkbox" /><span><code>viga.py</code> ejecutado: «Flecha máxima: 22.1 mm»</span></label></li>
+          <li><label><input type="checkbox" /><span><code>viga.ipynb</code> ejecutado con el kernel <code>curso</code></span></label></li>
+          <li><label><input type="checkbox" /><span>Error de <code>viga_con_error.py</code> encontrado con el
+                depurador</span></label></li>
+          <li><label><input type="checkbox" /><span>Extensión de IA instalada y con la sesión iniciada</span></label></li>
+        </ul>
+        <div class="links">
+          <a href="https://github.com/GeoOcean/ProfesIA" target="_blank" rel="noopener"><span
+              class="logo logo-github"></span><span>github.com/GeoOcean/ProfesIA<small>Esta presentación y los
+                ejemplos</small></span></a>
+          <a href="https://code.visualstudio.com" target="_blank" rel="noopener"><img class="img-logo"
+              src="assets/logos/vscode.png" alt="" /><span>code.visualstudio.com<small>Descargar VS
+                Code</small></span></a>
+          <a href="https://github.com/conda-forge/miniforge" target="_blank" rel="noopener"><span
+              class="logo logo-conda"></span><span>github.com/conda-forge/miniforge<small>Descargar
+                Miniforge</small></span></a>
+          <a href="https://docs.github.com/es/copilot/how-tos/manage-your-account/get-free-access-to-copilot-pro"
+            target="_blank" rel="noopener"><span class="logo logo-copilot"></span><span>Copilot gratis para
+              docentes<small>GitHub Education · 200 créditos de IA al mes</small></span></a>
+          <p class="muted" style="margin-top:0.6rem">¿Dudas? <strong>tausiaj@unican.es</strong> &middot; GeoOcean</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="chrome">
+    <button id="prev-btn" class="nav-btn" type="button" aria-label="Diapositiva anterior">&#8592;</button>
+    <div class="progress-track">
+      <div id="progress-fill" class="progress-fill"></div>
+    </div>
+    <span id="slide-counter" class="slide-counter">1 / 1</span>
+    <button id="next-btn" class="nav-btn" type="button" aria-label="Diapositiva siguiente">&#8594;</button>
+  </div>
+
+  <div id="lightbox"><img src="" alt="" /></div>
+
+  <div id="code-modal" class="code-modal">
+    <div class="code-modal-inner">
+      <div class="code-modal-header">
+        <span id="code-modal-title" class="code-modal-title"></span>
+        <button type="button" id="code-modal-close" class="code-modal-close" aria-label="Cerrar">&times;</button>
+      </div>
+      <pre id="code-modal-code"></pre>
+    </div>
+  </div>
+
+  <script src="deck.js"></script>
+</body>
+
+</html>

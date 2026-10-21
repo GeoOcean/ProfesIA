@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Figure written by ejemplos/viga.py
+ejemplos/viga.png
+
+# macOS
+.DS_Store
