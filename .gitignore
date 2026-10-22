@@ -224,3 +224,6 @@ ejemplos/viga.png
 
 # macOS
 .DS_Store
+
+# Original PowerPoint sources (~300 MB), kept locally only
+deck-fer/*.pptx
