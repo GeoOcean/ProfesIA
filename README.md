@@ -11,6 +11,7 @@ Puertos (Universidad de Cantabria), preparado por GeoOcean.
 | [`slides/`](slides/) | Presentación del taller práctico «La IA en tu ordenador: de ChatGPT a VS Code». Abre `slides/index.html` en el navegador. |
 | [`ejemplos/`](ejemplos/) | Todo lo práctico: abre esta carpeta en VS Code. Notebooks en la raíz, scripts en `scripts/` y datos en `data/`. |
 | [`libros/`](libros/) | Bibliografía de apoyo. |
+| [`requirements.txt`](requirements.txt) | Librerías de Python del curso, para `conda` o `pip`. |
 
 ## Primer día: de dónde partimos
 
@@ -55,16 +56,17 @@ diapositiva 2 resume el primer día) y sigue así:
 5. **Todo junto**: pedirle cosas a la IA dentro de VS Code.
 6. **Para casa**: lista de comprobación y enlaces.
 
-Para los ejemplos del taller, añade al entorno las librerías:
+Para los ejemplos, añade al entorno las librerías de
+[`requirements.txt`](requirements.txt). Desde la carpeta `ProfesIA`, con una de
+estas dos opciones:
 
 ```bash
-conda install -n profesia numpy pandas matplotlib ipykernel -y
+conda install -n profesia -c conda-forge --file requirements.txt -y
 ```
 
-El resto de notebooks de [`ejemplos/`](ejemplos/) necesitan además:
-
 ```bash
-conda install -n profesia scipy sympy plotly networkx ipywidgets xlrd -y
+conda activate profesia
+pip install -r requirements.txt
 ```
 
 ### Los ejemplos

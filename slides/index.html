@@ -444,8 +444,8 @@ bash Miniforge3-$(uname)-$(uname -m).sh</pre>
 conda create -n profesia python=3.12 -y</pre>
           </div>
           <div class="cmd">
-            <pre><span class="c"># hoy: añadirle las librerías del taller</span>
-conda install -n profesia numpy pandas matplotlib ipykernel -y</pre>
+            <pre><span class="c"># hoy: añadirle las librerías del curso (desde la carpeta ProfesIA)</span>
+conda install -n profesia -c conda-forge --file requirements.txt -y</pre>
           </div>
           <div class="cmd">
             <pre><span class="c"># entrar en el entorno (cada vez que abras una terminal nueva)</span>

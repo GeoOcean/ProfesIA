@@ -1,0 +1,13 @@
+# Librerías del curso ProfesIA (Python 3.12).
+# Con conda:  conda install -n profesia -c conda-forge --file requirements.txt
+# Con pip:    pip install -r requirements.txt   (con el entorno activado)
+ipykernel
+ipywidgets
+matplotlib
+networkx
+numpy
+pandas
+plotly
+scipy
+sympy
+xlrd
