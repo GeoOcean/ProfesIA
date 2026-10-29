@@ -1,7 +1,9 @@
 # ProfesIA
 
 Material del taller de IA para el profesorado de la ETSI de Caminos, Canales y
-Puertos (Universidad de Cantabria), preparado por GeoOcean.
+Puertos (Universidad de Cantabria), preparado por: Javier Tausía, Fernando Méndez, 
+Andrés Rodríguez, Javier González Villa, Cristina Manchado, Beatriz Pérez-Díaz, 
+Pablo Alonso.
 
 ## Qué hay aquí
 
