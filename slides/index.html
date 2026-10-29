@@ -41,6 +41,45 @@
 
     <!-- ============================================================ 2 -->
     <section class="slide">
+      <p class="kicker">Primer día &middot; De dónde partimos</p>
+      <h1>Lo que ya hemos hecho, paso a paso</h1>
+      <h2>El primer día dejamos el ordenador listo. Hoy entendemos qué hay detrás y lo ponemos a trabajar.</h2>
+      <div class="body cols-2">
+        <div>
+          <ol class="steps">
+            <li><strong>Cuenta de GitHub</strong> con el correo de unican: el repositorio mundial de código
+              abierto.</li>
+            <li><strong>Descargar Miniforge</strong>: gestiona entornos de programación de forma limpia; muy usado
+              para Python.</li>
+            <li><strong>Crear un entorno aislado</strong> con Python:
+              <code>conda create -n profesia python=3.12</code></li>
+            <li><strong>Descargar VS Code</strong>: el editor de textos del siglo XXI, con todo lo necesario para
+              programar, Copilot incluido.</li>
+            <li><strong>Abrir una carpeta</strong> del ordenador con VS Code: la forma óptima de trabajar.</li>
+            <li><strong>Instalar la extensión de Python</strong> en VS Code, para leer bien los archivos.</li>
+            <li><strong>Seleccionar el entorno</strong> de Python en esa carpeta, para poder ejecutar los
+              archivos.</li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="os-head">Y ahora, cómo seguimos</h3>
+          <ol class="steps">
+            <li><strong>Quién es quién</strong>: las empresas de la IA y quién las dirige.</li>
+            <li><strong>El mapa</strong>: empresa → modelo → chat → extensión de VS Code.</li>
+            <li><strong>La herramienta</strong>: VS Code, sus extensiones y los tipos de archivo.</li>
+            <li><strong>Manos a la obra</strong>: ejecutar y depurar Python en el entorno <code>profesia</code>.</li>
+            <li><strong>Todo junto</strong>: pedirle cosas a la IA dentro de VS Code.</li>
+          </ol>
+          <div class="callout" style="margin-top:1rem">
+            <span class="big">🧭</span>
+            <span>¿Te falta algún paso del primer día? Repásalo en las diapositivas 8 y 9 antes de seguir.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 3 -->
+    <section class="slide">
       <p class="kicker">Antes de empezar &middot; ¿Quién es quién?</p>
       <h1>Cuatro empresas, cuatro caras</h1>
       <h2>Casi todo lo que oímos sobre IA sale de estas cuatro empresas. Conocer a quién las dirige ayuda a entender
@@ -103,7 +142,7 @@
           Microsoft</a>, CC BY-SA 4.0</p>
     </section>
 
-    <!-- ============================================================ 3 -->
+    <!-- ============================================================ 4 -->
     <section class="slide">
       <p class="kicker">El mapa</p>
       <h1>Empresa, modelo, chat… y su versión para VS Code</h1>
@@ -170,7 +209,7 @@
       </div>
     </section>
 
-    <!-- ============================================================ 4 -->
+    <!-- ============================================================ 5 -->
     <section class="slide">
       <p class="kicker">La herramienta &middot; VS Code</p>
       <h1>¿Qué es VS Code?</h1>
@@ -191,8 +230,8 @@
               style="background:#28c840"></i><span>viga.py — ejemplos</span></div>
           <div class="main">
             <div class="act"><span class="badge">1</span><span class="on"></span><span></span><span></span><span></span><span></span></div>
-            <div class="side"><span class="badge">2</span><span class="h">EXPLORADOR</span><br>▾ ejemplos<br>
-              <div class="sel">&nbsp;&nbsp;viga.py</div>&nbsp;&nbsp;viga.ipynb<br>&nbsp;&nbsp;viga_con_error.py
+            <div class="side"><span class="badge">2</span><span class="h">EXPLORADOR</span><br>▾ ejemplos<br>&nbsp;&nbsp;▸ data<br>&nbsp;&nbsp;▾ scripts<br>
+              <div class="sel">&nbsp;&nbsp;&nbsp;&nbsp;viga.py</div>&nbsp;&nbsp;&nbsp;&nbsp;viga_con_error.py<br>&nbsp;&nbsp;viga.ipynb
             </div>
             <div class="center">
               <div class="editor"><span class="badge">3</span><span class="k">import</span> numpy <span class="k">as</span> np
@@ -203,7 +242,7 @@ E = <span class="n">210e9</span> <span class="c"># acero [Pa]</span>
 
 x = np.<span class="f">linspace</span>(<span class="n">0</span>, L, <span class="n">100</span>)
 <span class="f">print</span>(<span class="s">"Flecha máxima…"</span>)</div>
-              <div class="term"><span class="badge">4</span>TERMINAL<br><b>$ python viga.py</b><br>Flecha máxima: 22.1 mm</div>
+              <div class="term"><span class="badge">4</span>TERMINAL<br><b>$ python scripts/viga.py</b><br>Flecha máxima: 22.1 mm</div>
             </div>
             <div class="chat"><span class="badge">5</span>
               <div class="msg me">¿Qué hace este archivo?</div>
@@ -212,14 +251,14 @@ x = np.<span class="f">linspace</span>(<span class="n">0</span>, L, <span class=
             </div>
           </div>
           <div class="status"><span class="badge" style="right:auto;left:40%;top:-10px">6</span><span>Python 3.12
-              ('curso')</span><span>Ln 5, Col 12 &nbsp; UTF-8</span></div>
+              ('profesia')</span><span>Ln 5, Col 12 &nbsp; UTF-8</span></div>
         </div>
       </div>
       <p class="muted" style="margin-top:1rem">Descarga: <strong>code.visualstudio.com</strong> &middot; Ponerlo en
         español: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → «Configure Display Language».</p>
     </section>
 
-    <!-- ============================================================ 5 -->
+    <!-- ============================================================ 6 -->
     <section class="slide">
       <p class="kicker">La herramienta &middot; Extensiones</p>
       <h1>Las extensiones le dan superpoderes</h1>
@@ -284,7 +323,7 @@ x = np.<span class="f">linspace</span>(<span class="n">0</span>, L, <span class=
       </div>
     </section>
 
-    <!-- ============================================================ 6 -->
+    <!-- ============================================================ 7 -->
     <section class="slide">
       <p class="kicker">Entender los archivos</p>
       <h1>Archivos de texto y archivos binarios</h1>
@@ -349,7 +388,7 @@ x = np.<span class="f">linspace</span>(<span class="n">0</span>, L, <span class=
       </template>
     </section>
 
-    <!-- ============================================================ 7 -->
+    <!-- ============================================================ 8 -->
     <section class="slide">
       <p class="kicker">Manos a la obra &middot; 1 de 4</p>
       <h1>Instalar Python con Miniforge</h1>
@@ -391,50 +430,54 @@ bash Miniforge3-$(uname)-$(uname -m).sh</pre>
       </div>
     </section>
 
-    <!-- ============================================================ 8 -->
+    <!-- ============================================================ 9 -->
     <section class="slide">
       <p class="kicker">Manos a la obra &middot; 2 de 4</p>
-      <h1>Un entorno para el curso, y decírselo a VS Code</h1>
+      <h1>El entorno profesia, y decírselo a VS Code</h1>
       <h2>Un <strong>entorno</strong> es una caja de herramientas por proyecto: su versión de Python y sus librerías,
         sin mezclarse con las de otros proyectos.</h2>
       <div class="body cols-2">
         <div>
           <h3 class="os-head"><span class="logo logo-conda"></span>En la terminal</h3>
           <div class="cmd">
-            <pre><span class="c"># crea el entorno «curso» con Python y las librerías del taller</span>
-conda create -n curso python=3.12 numpy pandas matplotlib ipykernel -y</pre>
+            <pre><span class="c"># el primer día: crear el entorno «profesia» con Python</span>
+conda create -n profesia python=3.12 -y</pre>
+          </div>
+          <div class="cmd">
+            <pre><span class="c"># hoy: añadirle las librerías del taller</span>
+conda install -n profesia numpy pandas matplotlib ipykernel -y</pre>
           </div>
           <div class="cmd">
             <pre><span class="c"># entrar en el entorno (cada vez que abras una terminal nueva)</span>
-conda activate curso</pre>
+conda activate profesia</pre>
           </div>
           <p class="muted" style="margin-top:0.6rem">¿Falta una librería más adelante?
-            <code>conda install -n curso scipy</code></p>
+            <code>conda install -n profesia scipy</code></p>
         </div>
         <div>
           <h3 class="os-head"><img class="img-logo" src="assets/logos/vscode.png" alt="" />En VS Code</h3>
           <ol class="steps">
-            <li>Descarga los ejemplos: <strong>github.com/GeoOcean/ProfesIA</strong> → <strong>Code</strong> →
+            <li>Descarga el material: <strong>github.com/GeoOcean/ProfesIA</strong> → <strong>Code</strong> →
               <strong>Download ZIP</strong>, y descomprímelo.</li>
             <li><strong>Archivo → Abrir carpeta…</strong> → la carpeta <code>ejemplos</code>.</li>
-            <li>Abre <code>viga.py</code>. Pulsa <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → <strong>Python:
-                Select Interpreter</strong> → elige <code>curso</code>.</li>
-            <li>En un notebook, arriba a la derecha: <strong>Select Kernel</strong> → <code>curso</code>.</li>
+            <li>Abre <code>scripts/viga.py</code>. Pulsa <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → <strong>Python:
+                Select Interpreter</strong> → elige <code>profesia</code>.</li>
+            <li>En un notebook, arriba a la derecha: <strong>Select Kernel</strong> → <code>profesia</code>.</li>
           </ol>
           <div class="callout" style="margin-top:1rem">
             <span class="big">👀</span>
-            <span>Si abajo a la derecha pone <code>3.12 ('curso')</code>, VS Code está usando tu entorno.</span>
+            <span>Si abajo a la derecha pone <code>3.12 ('profesia')</code>, VS Code está usando tu entorno.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ 9 -->
+    <!-- ============================================================ 10 -->
     <section class="slide">
       <p class="kicker">Manos a la obra &middot; 3 de 4</p>
       <h1>Ejecutar un script y un notebook</h1>
       <h2>El mismo cálculo, la flecha de una viga en voladizo, de dos formas. Las dos usan el mismo Python del entorno
-        <code>curso</code>.</h2>
+        <code>profesia</code>.</h2>
       <div class="body cols-2">
         <div class="code-card">
           <div class="ch"><span>viga.py</span><span class="run">▶ Run Python File</span></div>
@@ -449,7 +492,7 @@ x = np.linspace(0, L, 100)
 flecha = P * x**2 * (3*L - x) / (6*E*I)
 print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre>
           <div class="use"><strong>Script (<code>.py</code>)</strong>: se ejecuta entero de arriba abajo con ▶, o
-            en la terminal con <code>python viga.py</code>. Ideal para cálculos que repites.</div>
+            en la terminal con <code>python scripts/viga.py</code>. Ideal para cálculos que repites.</div>
         </div>
         <div class="code-card">
           <div class="ch"><span>viga.ipynb</span><span class="run">⇧ Shift + Enter</span></div>
@@ -472,7 +515,7 @@ print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre
       </div>
     </section>
 
-    <!-- ============================================================ 10 -->
+    <!-- ============================================================ 11 -->
     <section class="slide">
       <p class="kicker">Manos a la obra &middot; 4 de 4</p>
       <h1>Depurar: parar el programa y mirar dentro</h1>
@@ -511,7 +554,7 @@ print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre
       </div>
     </section>
 
-    <!-- ============================================================ 11 -->
+    <!-- ============================================================ 12 -->
     <section class="slide">
       <p class="kicker">Todo junto</p>
       <h1>Pedirle cosas a la IA dentro de VS Code</h1>
@@ -548,20 +591,21 @@ print(<span class="s">f"Flecha máxima: {flecha.max()*1000:.1f} mm"</span>)</pre
         concretas.</p>
     </section>
 
-    <!-- ============================================================ 12 -->
+    <!-- ============================================================ 13 -->
     <section class="slide">
       <p class="kicker">Para casa</p>
       <h1>Lista de comprobación</h1>
       <h2>Si puedes marcar todo, ya tienes lo necesario para trabajar con IA y Python en VS Code.</h2>
       <div class="body cols-2">
         <ul class="checklist">
+          <li><label><input type="checkbox" /><span>Cuenta de GitHub con el correo de unican</span></label></li>
           <li><label><input type="checkbox" /><span>VS Code instalado (y en español, si lo prefieres)</span></label></li>
           <li><label><input type="checkbox" /><span>Extensiones <strong>Python</strong> y <strong>Jupyter</strong>
                 instaladas</span></label></li>
           <li><label><input type="checkbox" /><span>Miniforge instalado: <code>conda --version</code> responde</span></label></li>
-          <li><label><input type="checkbox" /><span>Entorno <code>curso</code> creado</span></label></li>
+          <li><label><input type="checkbox" /><span>Entorno <code>profesia</code> creado</span></label></li>
           <li><label><input type="checkbox" /><span><code>viga.py</code> ejecutado: «Flecha máxima: 22.1 mm»</span></label></li>
-          <li><label><input type="checkbox" /><span><code>viga.ipynb</code> ejecutado con el kernel <code>curso</code></span></label></li>
+          <li><label><input type="checkbox" /><span><code>viga.ipynb</code> ejecutado con el kernel <code>profesia</code></span></label></li>
           <li><label><input type="checkbox" /><span>Error de <code>viga_con_error.py</code> encontrado con el
                 depurador</span></label></li>
           <li><label><input type="checkbox" /><span>Extensión de IA instalada y con la sesión iniciada</span></label></li>

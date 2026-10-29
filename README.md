@@ -3,24 +3,85 @@
 Material del taller de IA para el profesorado de la ETSI de Caminos, Canales y
 Puertos (Universidad de Cantabria), preparado por GeoOcean.
 
-- [`deck/`](deck/): la presentación. Abre `deck/index.html` en el navegador.
-- [`ejemplos/`](ejemplos/): los archivos del taller práctico.
-  - `viga.py`: flecha de una viga en voladizo (IPE 200, 3 m, 10 kN). Debe dar
-    «Flecha máxima: 22.1 mm».
-  - `viga.ipynb`: el mismo cálculo como notebook, celda a celda.
-  - `viga_con_error.py`: la misma viga con un error escondido, para practicar
-    con el depurador.
+## Qué hay aquí
 
-## Preparar el ordenador
+| Carpeta | Contenido |
+| --- | --- |
+| [`slides-fer/`](slides-fer/) | Presentación principal del proyecto ProfesIA (objetivos, bloques, niveles y proyectos). PDF. |
+| [`slides/`](slides/) | Presentación del taller práctico «La IA en tu ordenador: de ChatGPT a VS Code». Abre `slides/index.html` en el navegador. |
+| [`ejemplos/`](ejemplos/) | Todo lo práctico: abre esta carpeta en VS Code. Notebooks en la raíz, scripts en `scripts/` y datos en `data/`. |
+| [`libros/`](libros/) | Bibliografía de apoyo. |
 
-1. Instala [VS Code](https://code.visualstudio.com) y las extensiones
-   **Python** y **Jupyter**.
-2. Instala [Miniforge](https://github.com/conda-forge/miniforge).
-3. Crea el entorno del curso:
+## Primer día: de dónde partimos
+
+Lo que hicimos juntos, paso a paso:
+
+1. **Crear una cuenta de [GitHub](https://github.com)** con el correo de unican
+   (el repositorio mundial de código abierto).
+2. **Descargar [Miniforge](https://github.com/conda-forge/miniforge)**
+   (software para gestionar entornos de programación de forma limpia, muy usado
+   para Python).
+3. **Crear un entorno aislado con Python**, usando Miniforge:
 
    ```bash
-   conda create -n curso python=3.12 numpy pandas matplotlib ipykernel -y
+   conda create -n profesia python=3.12
    ```
 
-4. En VS Code: *Archivo → Abrir carpeta…* → `ejemplos`, y elige el intérprete
-   `curso` (`Ctrl+Shift+P` → *Python: Select Interpreter*).
+4. **Descargar [Visual Studio Code](https://code.visualstudio.com)** (VS Code:
+   el editor de textos del siglo XXI, que integra todo lo necesario para
+   programar, Copilot incluido).
+5. **Abrir una carpeta del ordenador con VS Code** (*Archivo → Abrir
+   carpeta…*), la forma óptima de trabajar.
+6. **Instalar la extensión de Python** para VS Code (para leer bien los
+   archivos).
+7. **Seleccionar el entorno de Python** para trabajar en esa carpeta
+   (`Ctrl+Shift+P` → *Python: Select Interpreter* → `profesia`), para poder
+   ejecutar los archivos.
+
+Si te falta alguno, repásalo en las diapositivas 8 y 9 de [`slides/`](slides/).
+
+## Cómo seguimos
+
+La presentación [`slides/`](slides/) arranca justo donde lo dejamos (la
+diapositiva 2 resume el primer día) y sigue así:
+
+1. **Quién es quién**: las cuatro empresas que mueven la IA (OpenAI,
+   Anthropic, Google DeepMind, Microsoft) y quién las dirige.
+2. **El mapa**: empresa → modelo → chat → extensión de VS Code.
+3. **La herramienta**: qué es VS Code, sus extensiones y los archivos de
+   texto frente a los binarios.
+4. **Manos a la obra**: añadir librerías al entorno, ejecutar `viga.py` y
+   `viga.ipynb`, y depurar `viga_con_error.py`.
+5. **Todo junto**: pedirle cosas a la IA dentro de VS Code.
+6. **Para casa**: lista de comprobación y enlaces.
+
+Para los ejemplos del taller, añade al entorno las librerías:
+
+```bash
+conda install -n profesia numpy pandas matplotlib ipykernel -y
+```
+
+El resto de notebooks de [`ejemplos/`](ejemplos/) necesitan además:
+
+```bash
+conda install -n profesia scipy sympy plotly networkx ipywidgets xlrd -y
+```
+
+### Los ejemplos
+
+```
+ejemplos/
+├── viga.ipynb               la viga como notebook, celda a celda
+├── ANN(2,3,1).ipynb         red neuronal 2-3-1 interactiva
+├── TrainingANN.ipynb        entrenamiento de una red neuronal, paso a paso
+├── CadenaMarkov.ipynb       simulación de una cadena de Markov
+├── funcion3D.ipynb          función de dos variables en 3D e integral
+├── ODE.ipynb                ecuación diferencial resuelta con SymPy
+├── lluvias.ipynb            análisis de una serie de precipitaciones
+├── scripts/
+│   ├── viga.py              flecha de una viga en voladizo (IPE 200, 3 m, 10 kN):
+│   │                        debe dar «Flecha máxima: 22.1 mm»
+│   └── viga_con_error.py    la misma viga con un error escondido, para el depurador
+└── data/
+    └── 1083e_R.xls          serie de precipitaciones que lee lluvias.ipynb
+```

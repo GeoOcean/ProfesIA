@@ -2,7 +2,7 @@
 
     δ(x) = P·x²·(3L − x) / (6·E·I)      (x medido desde el empotramiento)
 
-Ejecutar con el botón ▶ de VS Code o en la terminal:  python viga.py
+Ejecutar con el botón ▶ de VS Code o en la terminal:  python scripts/viga.py
 """
 
 import matplotlib.pyplot as plt
