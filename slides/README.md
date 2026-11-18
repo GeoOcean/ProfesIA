@@ -14,29 +14,30 @@ de VS Code con la extensión **Live Preview** (clic derecho → *Show Preview*).
   botón de arriba a la derecha para modo claro / oscuro / automático.
 - `index.html#8` abre directamente la diapositiva 8; los temas del resumen
   (diapositiva 2) enlazan al anexo.
-- Diapositiva 7, «La viga, en directo»: arrastra la carga sobre la viga o usa
+- Diapositiva 8, «La viga, en directo»: arrastra la carga sobre la viga o usa
   los deslizadores. Lee `data/viga_datos.js`, que escribe
   `ejemplos/viga_interactiva.ipynb`.
-- Clic en una foto para ampliarla; clic en el aviso del notebook (diapositiva 15)
+- Clic en una foto para ampliarla; clic en el aviso del notebook (diapositiva 16)
   para ver el `.ipynb` por dentro.
 - Los bloques de comandos tienen botón «Copiar»; la lista de comprobación se
   recuerda en el navegador de cada asistente.
 
 ## Diapositivas
 
-| # | Contenido |
-| --- | --- |
-| 1 | Portada (tercer día) |
-| 2 | Resumen: día 1 (7 pasos) y día 2 (enlaces al anexo) |
-| 3 | ¿Por qué VS Code y no la web? Chat en la web frente a IA en VS Code |
-| 4 | Esta presentación es un archivo de texto: Live Preview y editarla con IA |
-| 5 | Un cálculo, cuatro archivos: librería → notebook → datos → presentación |
-| 6 | `vigas.py` y `viga_interactiva.ipynb` |
-| 7 | La viga, en directo (interactiva) |
-| 8 | Retos para pedirle a la IA |
-| 9 | Lista de comprobación y enlaces |
-| 10 | Anexo: repaso del día 2 |
-| 11–20 | Día 2: quién es quién, mapa, VS Code, extensiones, archivos, Miniforge, entorno, ejecutar, depurar, IA en VS Code |
+| #     | Contenido                                                                                                         |
+| ----- | ----------------------------------------------------------------------------------------------------------------- |
+| 1     | Portada (tercer día)                                                                                              |
+| 2     | Resumen: día 1 (7 pasos) y día 2 (enlaces al anexo)                                                               |
+| 3     | Ruegos y preguntas (a ver si el profesorado tiene dudas)                                                          |
+| 4     | ¿Por qué VS Code y no la web? Chat en la web frente a IA en VS Code                                               |
+| 5     | Esta presentación es un archivo de texto: Live Preview y editarla con IA                                          |
+| 6     | Un cálculo, cuatro archivos: librería → notebook → datos → presentación                                           |
+| 7     | `vigas.py` y `viga_interactiva.ipynb`                                                                             |
+| 8     | La viga, en directo (interactiva)                                                                                 |
+| 9     | Retos para pedirle a la IA                                                                                        |
+| 10    | Lista de comprobación y enlaces                                                                                   |
+| 11    | Anexo: repaso del día 2                                                                                           |
+| 12–21 | Día 2: quién es quién, mapa, VS Code, extensiones, archivos, Miniforge, entorno, ejecutar, depurar, IA en VS Code |
 
 ## La viga en directo
 
@@ -53,13 +54,13 @@ Si falta, la diapositiva pide ejecutar el notebook.
 
 ## Mantenimiento a mano
 
-| Qué | Dónde |
-| --- | --- |
-| Versiones de los modelos (GPT-6, Claude 5.5, Gemini 3.5), a octubre de 2026 | diapositivas 11 y 12 de `index.html` |
-| Copilot Student para docentes (200 créditos de IA al mes, octubre de 2026) | diapositivas 9, 12 y 20 |
-| Números del ejemplo (22.1 mm; 22 m con el error) | diapositivas 2, 3, 6, 9, 13, 18, 19; salen de `ejemplos/` |
-| Perfil de la viga en directo (IPE 200) | `PERFIL` en `ejemplos/viga_interactiva.ipynb`; vuelve a ejecutarlo |
-| Números de diapositiva de los enlaces del resumen | diapositiva 2 (`href="#11"`…) |
+| Qué                                                                         | Dónde                                                              |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Versiones de los modelos (GPT-6, Claude 5.5, Gemini 3.5), a octubre de 2026 | diapositivas 12 y 13 de `index.html`                               |
+| Copilot Student para docentes (200 créditos de IA al mes, octubre de 2026)  | diapositivas 10, 13 y 21                                           |
+| Números del ejemplo (22.1 mm; 22 m con el error)                            | diapositivas 2, 4, 7, 10, 14, 19, 20; salen de `ejemplos/`         |
+| Perfil de la viga en directo (IPE 200)                                      | `PERFIL` en `ejemplos/viga_interactiva.ipynb`; vuelve a ejecutarlo |
+| Números de diapositiva de los enlaces del resumen                           | diapositiva 2 (`href="#12"`…)                                      |
 
 ## Créditos de imágenes
 
