@@ -1598,3 +1598,508 @@ ol.steps strong {
     display: none;
   }
 }
+
+/* =====================================================================
+   Day 3: recap, comparison, file tree, notebook mock, live beam
+   ===================================================================== */
+
+.code-card pre .f { color: var(--accent); font-weight: 600; }
+
+/* ---- Recap ---- */
+
+.card h3 .pill {
+  vertical-align: 0.1em;
+}
+
+ul.recap-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+ul.recap-links a {
+  display: block;
+  padding: 0.32rem 0.6rem;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+ul.recap-links a::after {
+  content: " →";
+  color: var(--text-muted);
+}
+
+ul.recap-links a:hover,
+ul.recap-links a:focus-visible {
+  background: var(--green-soft);
+  color: var(--text-primary);
+}
+
+/* ---- Web chat vs VS Code ---- */
+
+table.compare td:first-child {
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+table.compare td {
+  color: var(--text-secondary);
+}
+
+table.compare th small {
+  display: block;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  font-size: 0.78rem;
+  margin-top: 0.1rem;
+}
+
+table.compare td.vsc-col {
+  color: var(--text-primary);
+}
+
+/* ---- File tree ---- */
+
+.peek.tree {
+  margin-top: 0;
+}
+
+.peek.tree pre {
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.peek.tree pre b {
+  color: var(--text-primary);
+}
+
+.peek.tree pre i {
+  color: var(--green);
+}
+
+/* ---- ipywidgets mock inside the notebook card ---- */
+
+.widget-mock {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.35rem 0.7rem;
+  font-family: var(--font) !important;
+  font-size: 0.78rem !important;
+}
+
+.widget-mock i {
+  position: relative;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+
+.widget-mock i::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: 2px;
+  background: var(--green);
+}
+
+.widget-mock i::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--v);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 2px solid var(--green);
+  transform: translate(-50%, -50%);
+}
+
+.widget-mock b {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.widget-mock em {
+  grid-column: 2 / 4;
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+.widget-mock em u {
+  text-decoration: none;
+  background: var(--green);
+  color: var(--surface-0);
+  padding: 0.05rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+}
+
+/* ---- Section divider ---- */
+
+.section-slide h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+}
+
+/* ---- Prompts grid ---- */
+
+.retos {
+  gap: 1rem 1.2rem;
+}
+
+/* ---- Live beam ---- */
+
+.viga-demo {
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 300px);
+  gap: 1.2rem 1.6rem;
+  align-items: stretch;
+}
+
+.viga-stage {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.4rem 0.6rem;
+  min-width: 0;
+}
+
+#viga-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 52vh;
+  touch-action: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+#viga-svg.dragging {
+  cursor: grabbing;
+}
+
+#viga-svg text {
+  font-family: var(--font);
+  font-size: 13px;
+  fill: var(--text-secondary);
+}
+
+#viga-svg .v-load text,
+#viga-svg .v-max-txt {
+  paint-order: stroke;
+  stroke: var(--surface-2);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+#viga-svg .v-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--text-muted);
+}
+
+#viga-svg .v-lbl.dim {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+#viga-svg .v-lbl.small {
+  font-size: 11px;
+}
+
+#viga-svg .v-ref {
+  stroke: var(--text-muted);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
+  opacity: 0.6;
+}
+
+#viga-svg .v-beam line {
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+#viga-svg .v-wall {
+  fill: var(--text-muted);
+  opacity: 0.55;
+}
+
+#viga-svg .v-hatch,
+#viga-svg .v-ground {
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+}
+
+#viga-svg .v-sup {
+  fill: var(--surface-1);
+  stroke: var(--text-secondary);
+  stroke-width: 1.8;
+}
+
+#viga-svg .v-load line {
+  stroke: var(--text-primary);
+  stroke-width: 3.5;
+}
+
+#viga-svg .v-load-head {
+  fill: var(--text-primary);
+}
+
+#viga-svg .v-load text {
+  font-weight: 700;
+  font-size: 14px;
+  fill: var(--text-primary);
+}
+
+#viga-svg .v-knob {
+  fill: var(--surface-2);
+  stroke: var(--text-primary);
+  stroke-width: 2.5;
+  cursor: grab;
+}
+
+#viga-svg .v-max-ring {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: v-pulse 1.6s ease-out infinite;
+}
+
+#viga-svg .v-max-dot {
+  fill: var(--red);
+}
+
+#viga-svg .v-max-txt {
+  font-size: 12.5px;
+  font-weight: 700;
+  fill: var(--red);
+}
+
+@keyframes v-pulse {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #viga-svg .v-max-ring { animation: none; }
+}
+
+#viga-svg .v-axis {
+  stroke: var(--text-secondary);
+  stroke-width: 1.4;
+}
+
+#viga-svg .v-my {
+  stroke: var(--red);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.7;
+}
+
+#viga-svg .v-m-fill {
+  fill: var(--green);
+  opacity: 0.18;
+}
+
+#viga-svg .v-m-line {
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 2;
+}
+
+#viga-svg.yield .v-m-fill { fill: var(--red); }
+#viga-svg.yield .v-m-line { stroke: var(--red); }
+
+.viga-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.seg {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.seg button {
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.5rem;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.seg button.on {
+  background: var(--green);
+  color: var(--surface-0);
+}
+
+.ctl {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.ctl > span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctl b {
+  font-family: var(--mono);
+  color: var(--text-primary);
+}
+
+.ctl input[type="range"] {
+  width: 100%;
+  accent-color: var(--green);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.stat,
+.meter-wrap {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 0.75rem;
+}
+
+.stat span,
+.meter-head span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.stat b,
+.meter-head b {
+  font-size: 1.15rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.meter-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.meter-head b {
+  font-size: 1rem;
+}
+
+.meter {
+  position: relative;
+  height: 10px;
+  margin: 0.45rem 0 0.25rem;
+  border-radius: 5px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+}
+
+.meter i {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 5px;
+  background: var(--green);
+  transition: width 0.12s ease;
+}
+
+.meter i.warn { background: color-mix(in srgb, var(--red) 55%, var(--green)); }
+.meter i.bad { background: var(--red); }
+
+/* fy sits at 1/1.5 of the bar: the bar runs from 0 to 1.5·fy. */
+.meter .fy {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: 66.67%;
+  width: 2px;
+  background: var(--text-primary);
+}
+
+.meter-foot {
+  position: relative;
+  height: 1em;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.meter-foot span:last-child {
+  position: absolute;
+  left: 66.67%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.viga-state {
+  font-size: 0.92rem !important;
+  font-weight: 600;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  background: var(--green-soft);
+  color: var(--green) !important;
+}
+
+.viga-state.warn,
+.viga-state.bad {
+  background: var(--red-soft);
+  color: var(--red) !important;
+}
+
+.viga-src {
+  grid-column: 1 / -1;
+  font-size: 0.82rem !important;
+  color: var(--text-muted) !important;
+  max-width: none !important;
+}
+
+.viga-src.missing {
+  color: var(--red) !important;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .viga-demo {
+    grid-template-columns: 1fr;
+  }
+
+  table.compare td:first-child {
+    white-space: normal;
+  }
+}

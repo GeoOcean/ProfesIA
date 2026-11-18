@@ -33,8 +33,9 @@
       if (e.key === "Escape") closeLightbox();
       return;
     }
-    // Let checkboxes and buttons keep Space for themselves.
+    // Let checkboxes and buttons keep Space for themselves, and sliders their arrows.
     if (e.target.closest?.("input, button, a") && e.key === " ") return;
+    if (e.target.closest?.("input[type=range]")) return;
     if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) {
       e.preventDefault();
       next();
@@ -51,7 +52,10 @@
   });
 
   let touchStartX = null;
-  document.addEventListener("touchstart", (e) => (touchStartX = e.touches[0].clientX));
+  document.addEventListener("touchstart", (e) => {
+    // Dragging inside an interactive figure must not change slide.
+    touchStartX = e.target.closest?.("[data-no-swipe]") ? null : e.touches[0].clientX;
+  });
   document.addEventListener("touchend", (e) => {
     if (touchStartX == null) return;
     const dx = e.changedTouches[0].clientX - touchStartX;
@@ -59,9 +63,13 @@
     touchStartX = null;
   });
 
+  // Links like <a href="#11"> jump to that slide.
+  const slideFromHash = () => (parseInt(location.hash.replace("#", ""), 10) || 1) - 1;
+  window.addEventListener("hashchange", () => show(slideFromHash()));
+
   // Skip the fade-in on first paint -- only animate slide-to-slide moves.
   document.body.classList.add("preload");
-  show((parseInt(location.hash.replace("#", ""), 10) || 1) - 1);
+  show(slideFromHash());
   requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.remove("preload")));
 
   /* ---------------------------------------------------------------------

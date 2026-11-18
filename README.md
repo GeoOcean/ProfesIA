@@ -1,9 +1,12 @@
 # ProfesIA
 
 Material del taller de IA para el profesorado de la ETSI de Caminos, Canales y
-Puertos (Universidad de Cantabria), preparado por: Javier Tausía, Fernando Méndez, 
-Andrés Rodríguez, Javier González Villa, Cristina Manchado, Beatriz Pérez-Díaz, 
+Puertos (Universidad de Cantabria), preparado por: Javier Tausía, Fernando Méndez,
+Andrés Rodríguez, Javier González Villa, Cristina Manchado, Beatriz Pérez-Díaz,
 Pablo Alonso.
+
+El desarrollo del taller (qué vemos cada día, listas de comprobación y próximos
+pasos) está en la presentación [`slides/`](slides/), que se va actualizando.
 
 ## Qué hay aquí
 
@@ -11,70 +14,39 @@ Pablo Alonso.
 | --- | --- |
 | [`slides-fer/`](slides-fer/) | Presentación principal del proyecto ProfesIA (objetivos, bloques, niveles y proyectos). PDF. |
 | [`slides/`](slides/) | Presentación del taller práctico «La IA en tu ordenador: de ChatGPT a VS Code». Abre `slides/index.html` en el navegador. |
-| [`ejemplos/`](ejemplos/) | Todo lo práctico: abre esta carpeta en VS Code. Notebooks en la raíz, scripts en `scripts/` y datos en `data/`. |
+| [`ejemplos/`](ejemplos/) | Todo lo práctico: notebooks y librerías en la raíz, scripts en `scripts/` y datos en `data/`. |
 | [`libros/`](libros/) | Bibliografía de apoyo. |
 | [`requirements.txt`](requirements.txt) | Librerías de Python del curso, para `conda` o `pip`. |
 
-## Primer día: de dónde partimos
+## Puesta en marcha
 
-Lo que hicimos juntos, paso a paso:
+Necesitas [Miniforge](https://github.com/conda-forge/miniforge) y
+[Visual Studio Code](https://code.visualstudio.com) con la extensión de Python.
 
-1. **Crear una cuenta de [GitHub](https://github.com)** con el correo de unican
-   (el repositorio mundial de código abierto).
-2. **Descargar [Miniforge](https://github.com/conda-forge/miniforge)**
-   (software para gestionar entornos de programación de forma limpia, muy usado
-   para Python).
-3. **Crear un entorno aislado con Python**, usando Miniforge:
+1. Crea el entorno e instala las librerías, desde la carpeta `ProfesIA`:
 
    ```bash
    conda create -n profesia python=3.12
+   conda install -n profesia -c conda-forge --file requirements.txt -y
    ```
 
-4. **Descargar [Visual Studio Code](https://code.visualstudio.com)** (VS Code:
-   el editor de textos del siglo XXI, que integra todo lo necesario para
-   programar, Copilot incluido).
-5. **Abrir una carpeta del ordenador con VS Code** (*Archivo → Abrir
-   carpeta…*), la forma óptima de trabajar.
-6. **Instalar la extensión de Python** para VS Code (para leer bien los
-   archivos).
-7. **Seleccionar el entorno de Python** para trabajar en esa carpeta
-   (`Ctrl+Shift+P` → *Python: Select Interpreter* → `profesia`), para poder
-   ejecutar los archivos.
+   (o bien `conda activate profesia` y `pip install -r requirements.txt`).
 
-Si te falta alguno, repásalo en las diapositivas 8 y 9 de [`slides/`](slides/).
+2. Abre la carpeta **`ProfesIA` entera** en VS Code (*Archivo → Abrir
+   carpeta…*) y selecciona el entorno (`Ctrl+Shift+P` → *Python: Select
+   Interpreter* → `profesia`).
 
-## Cómo seguimos
+3. Para ver la presentación dentro de VS Code, instala la extensión **Live
+   Preview** (de Microsoft) y abre `slides/index.html`. Algunas diapositivas
+   leen datos que generan los notebooks (`slides/data/`): al volver a ejecutar
+   el notebook y recargar la presentación, se actualizan.
 
-La presentación [`slides/`](slides/) arranca justo donde lo dejamos (la
-diapositiva 2 resume el primer día) y sigue así:
+## Los ejemplos
 
-1. **Quién es quién**: las cuatro empresas que mueven la IA (OpenAI,
-   Anthropic, Google DeepMind, Microsoft) y quién las dirige.
-2. **El mapa**: empresa → modelo → chat → extensión de VS Code.
-3. **La herramienta**: qué es VS Code, sus extensiones y los archivos de
-   texto frente a los binarios.
-4. **Manos a la obra**: añadir librerías al entorno, ejecutar `viga.py` y
-   `viga.ipynb`, y depurar `viga_con_error.py`.
-5. **Todo junto**: pedirle cosas a la IA dentro de VS Code.
-6. **Para casa**: lista de comprobación y enlaces.
-
-Para los ejemplos, añade al entorno las librerías de
-[`requirements.txt`](requirements.txt). Desde la carpeta `ProfesIA`, con una de
-estas dos opciones:
-
-```bash
-conda install -n profesia -c conda-forge --file requirements.txt -y
-```
-
-```bash
-conda activate profesia
-pip install -r requirements.txt
-```
-
-### Los ejemplos
-
-```
+```text
 ejemplos/
+├── vigas.py                 librería: flecha y momento de una viga
+├── viga_interactiva.ipynb   mini interfaz con deslizadores + exporta datos a las diapositivas
 ├── viga.ipynb               la viga como notebook, celda a celda
 ├── ANN(2,3,1).ipynb         red neuronal 2-3-1 interactiva
 ├── TrainingANN.ipynb        entrenamiento de una red neuronal, paso a paso
